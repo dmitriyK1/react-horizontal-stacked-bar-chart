@@ -16,13 +16,13 @@ React horizontal stacked bar responsive chart component.
 ## Installation via NPM
 
 ```bash
-npm install react-horizontal-stacked-bar-chart --save
+npm install react-horizontal-stacked-bar-chart-fork --save
 ```
 
 ## Usage
 
 ```js
-import HSBar from "react-horizontal-stacked-bar-chart";
+import HSBar from "react-horizontal-stacked-bar-chart-fork";
 ```
 
 Simple
