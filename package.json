@@ -1,6 +1,6 @@
 {
   "name": "react-horizontal-stacked-bar-chart-fork",
-  "version": "8.15.5",
+  "version": "8.15.6",
   "description": "React horizontal stacked bar responsive chart component",
   "keywords": [
     "stacked-chart",
@@ -18,8 +18,6 @@
   },
   "license": "MIT",
   "main": "umd/hsbar.min.js",
-  "module": "esm/index.js",
-  "types": "types/index.d.ts",
   "scripts": {
     "test": "echo \"No test specified\" && exit 1",
     "start": "webpack --watch",

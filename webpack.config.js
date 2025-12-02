@@ -4,18 +4,15 @@ module.exports = {
     entry: "./src/index.jsx",
     mode: "production",
     output: {
-        path: path.resolve(__dirname, "esm"),
-        filename: "index.js",
-        library: {
-            type: "module"
-        },
-        clean: true
-    },
-    experiments: {
-        outputModule: true
+        path: path.resolve(__dirname, "umd"),
+        filename: "hsbar.min.js",
+        libraryTarget: "umd"
     },
     resolve: {
-        extensions: [".js", ".jsx"]
+        extensions: [".js", ".jsx"],
+        alias: {
+            modules: path.join(__dirname, "node_modules")
+        }
     },
     module: {
         rules: [
@@ -26,17 +23,24 @@ module.exports = {
                 use: {
                     loader: "babel-loader",
                     options: {
-                        presets: [
-                            "@babel/preset-env",
-                            ["@babel/preset-react", { runtime: "classic" }]
-                        ],
+                        presets: ["@babel/preset-env", "@babel/preset-react"],
                     }
                 }
             }
         ]
     },
     externals: {
-        react: "react",
-        "react-dom": "react-dom"
-    }
+        react: {
+            root: 'React',
+            commonjs: 'react',
+            commonjs2: 'react',
+            amd: 'react',
+        },
+        'react-dom': {
+            root: 'ReactDOM',
+            commonjs: 'react-dom',
+            commonjs2: 'react-dom',
+            amd: 'react-dom',
+        },
+    },
 };
