@@ -4,9 +4,15 @@ module.exports = {
     entry: "./src/index.jsx",
     mode: "production",
     output: {
-        path: path.resolve(__dirname, "umd"),
-        filename: "hsbar.min.js",
-        libraryTarget: "commonjs2"
+        path: path.resolve(__dirname, "esm"),
+        filename: "index.js",
+        library: {
+            type: "module"
+        },
+        clean: true
+    },
+    experiments: {
+        outputModule: true
     },
     resolve: {
         extensions: [".js", ".jsx"]
@@ -24,14 +30,13 @@ module.exports = {
                             "@babel/preset-env",
                             ["@babel/preset-react", { runtime: "classic" }]
                         ],
-                        plugins: ["@babel/plugin-proposal-object-rest-spread"]
                     }
                 }
             }
         ]
     },
     externals: {
-        react: "commonjs react",
-        "react-dom": "commonjs react-dom"
+        react: "react",
+        "react-dom": "react-dom"
     }
 };
